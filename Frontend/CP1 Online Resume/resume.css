@@ -1,0 +1,61 @@
+.name-title{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 0px;
+}
+
+.sub{
+    margin-left: 40px;
+}
+
+.designation{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.sub-heading{
+    margin: 10px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+ul{
+    margin-top: 10px;
+    padding: 0;
+}
+
+.description{
+    margin: 25px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.ed{
+    display: inline-block;
+    margin: 10px;
+    margin-left: 0;
+}
+
+h4.ed{
+    width: 30%;
+}
+
+h5.exp{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h4.exp{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+p.exp{
+    margin-top: 5px;
+}
+
+.contact > p{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}

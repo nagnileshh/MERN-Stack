@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do List</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1 style="text-align: center"><%= locals.title %></h1>
+    <div class="container">
+      <% locals.list.forEach((element) => { %>
+      <div class="lg-6 md-8 card bg-secondary text-white">
+        <form action="/delete" method="post">
+          <div class="card-body">
+            <input
+              type="checkbox"
+              id="lname"
+              name="_id"
+              value="<%= element._id %>"
+              onchange="this.form.submit()"
+            />
+            <p><%= element.name %></p>
+          </div>
+          <input type="hidden" name="listName" value="<%= locals.title %>">
+        </form>
+      </div>
+      <% }) %>
+
+      <!-- <form action="/addNewItem">
+        <input type="submit" value="Add New Item">
+      </form>  -->
+      <form action="/addNewItem" method="post">
+        <div class="input-group">
+          <span class="input-group-addon"
+            ><i class="glyphicon glyphicon-user"></i
+          ></span>
+          <input
+            id="a"
+            type="new item"
+            class="form-control"
+            name="newItem"
+            placeholder="New Item"
+          />
+          <button type="submit" name="listName" value="<%= locals.title %>">+</button>
+          <!-- <a href="/addNewItem"><svg href="/addNewItem" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+          </svg></a> -->
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
